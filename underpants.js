@@ -59,6 +59,15 @@ C:
 E:
 */
 
+_.typeOf = function(value){
+  if(Array.isArray(value)){
+    return "array"
+  }
+  if(value === null){
+    return "null"
+  }
+  return typeof value
+}
 
 
 
@@ -227,7 +236,8 @@ E:
 *   3) return the new array
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
-*/.   //collection          //function           //output
+*/   //collection          //function           //output
+
 
 _.map = function(collection, func){
   // create output array
