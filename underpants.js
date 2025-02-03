@@ -25,12 +25,6 @@ _.identity = function(value){
     return value
 }
 
-/*
-I:
-O:
-C:
-E:
-*/
 
 /** _.typeOf
 * Arguments:
@@ -90,6 +84,25 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+/*
+I: Takes in an array and a number
+O: if array is not an array, return an empty array
+C: 
+E: What if number is negative
+   What if number is greater than array.length
+*/
+
+
+_.first = function(array, number){
+
+
+  if (!Array.isArray(array)){
+    return []
+  }
+  
+  
+}
+
 
 /** _.last
 * Arguments:
@@ -109,6 +122,13 @@ _.typeOf = function(value){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+/*
+I:
+O:
+C:
+E:
+*/
+
 
 /** _.indexOf
 * Arguments:
@@ -126,6 +146,13 @@ _.typeOf = function(value){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+/*
+I:
+O:
+C:
+E:
+*/
+
 
 /** _.contains
 * Arguments:
@@ -140,6 +167,13 @@ _.typeOf = function(value){
 *   2) what if no <value> is given?
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
+*/
+
+/*
+I:
+O:
+C:
+E:
 */
 
 
@@ -159,6 +193,13 @@ _.typeOf = function(value){
 *      -> should log "a" "b" "c" to the console
 */
 
+/*
+I:
+O:
+C:
+E:
+*/
+
 
 /** _.unique
 * Arguments:
@@ -168,6 +209,13 @@ _.typeOf = function(value){
 *   2) Use _.indexOf() from above
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
+*/
+
+/*
+I:
+O:
+C:
+E:
 */
 
 
@@ -187,6 +235,13 @@ _.typeOf = function(value){
 *   use _.each in your implementation
 */
 
+/*
+I:
+O:
+C:
+E:
+*/
+
 
 /** _.reject
 * Arguments:
@@ -199,6 +254,13 @@ _.typeOf = function(value){
 *   3) This is the logical inverse if _.filter()
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
+*/
+
+/*
+I:
+O:
+C:
+E:
 */
 
 
@@ -219,6 +281,13 @@ _.typeOf = function(value){
 *     return element % 2 === 0;
 *   }); -> [[2,4],[1,3,5]]
 }
+*/
+
+/*
+I:
+O:
+C:
+E:
 */
 
 
@@ -268,6 +337,13 @@ _.map = function(collection, func){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+/*
+I:
+O:
+C:
+E:
+*/
+
 
 /** _.every
 * Arguments:
@@ -288,6 +364,13 @@ _.map = function(collection, func){
 * Examples:
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
+*/
+
+/*
+I:
+O:
+C:
+E:
 */
 
 
@@ -312,6 +395,13 @@ _.map = function(collection, func){
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+/*
+I:
+O:
+C:
+E:
+*/
+
 
 /** _.reduce
 * Arguments:
@@ -333,6 +423,13 @@ _.map = function(collection, func){
 */
 
 
+/*
+I:
+O:
+C:
+E:
+*/
+
 /** _.extend
 * Arguments:
 *   1) An Object
@@ -346,6 +443,13 @@ _.map = function(collection, func){
 *   var data = {a:"one"};
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
+*/
+
+/*
+I:
+O:
+C:
+E:
 */
 
 //////////////////////////////////////////////////////////////////////
