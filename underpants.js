@@ -21,6 +21,16 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
+_.identity = function(value){
+    return value
+}
+
+/*
+I:
+O:
+C:
+E:
+*/
 
 /** _.typeOf
 * Arguments:
@@ -41,6 +51,16 @@ var _ = {};
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
+
+/*
+I: takes in any value
+O: return a type of value as a string
+C:
+E:
+*/
+
+
+
 
 
 /** _.first
@@ -207,7 +227,24 @@ var _ = {};
 *   3) return the new array
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
-*/
+*/.   //collection          //function           //output
+
+_.map = function(collection, func){
+  // create output array
+   const output = [];
+   //determine if collection is an array
+   if(Array.isArray(collection)){
+     for(let i = 0; i < collection.length; i++){
+        const result = func(collection[i], i, collection) // what is the purpose of the callback
+        output.push(result);
+     }
+   } else {
+
+   }
+
+ // return output array
+ return output;
+}
 
 
 /** _.pluck
