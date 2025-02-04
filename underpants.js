@@ -196,11 +196,41 @@ return array.slice(-number)
 */
 
 /*
-I:
-O:
-C:
-E:
+I: takes in an array and a value
+O: return the index of array that is the first occurence of value 
+   return -1 if value is not in array
+C: 
+E: What if value has multiple occurences of value
+   what if value isn't in array
 */
+
+_.indexOf = function(array, value){
+  // check to see if the array is an array
+  if(!Array.isArray(array)){
+ // if not an array return -1
+    return -1
+  }
+  // use a for loop to iterate thought the array
+  for(let i = 0; i < array.length; i++){
+  // check to see if value is in array[i] element 
+    if(array[i] === value){
+    // if found return its index in the array
+      return i;
+    }
+  }
+  // return -1 if no match is found
+  return -1;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /** _.contains
