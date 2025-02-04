@@ -99,9 +99,24 @@ _.first = function(array, number){
   if (!Array.isArray(array)){
     return []
   }
+  if (number !== "number"){
+    return array[0]
+  } 
+  if (number < 0){
+    return [];
+  }
+  if(number > array.length){
+    return array
+  } 
+  for(var i = 0; i < array.length; i++){
+    if(typeof array[i] === "number"){
+      return array[i]
+    }
+    }
+    return array[0]
+  }
   
-  
-}
+
 
 
 /** _.last
