@@ -153,6 +153,28 @@ E: What if number is negative
 */
 
 _.last = function(array, number){
+ // return an empty array if the array param is not an array
+ // if number is an array just return an empty array
+if (!Array.isArray(array)){
+  return [];
+}
+// return the first element if if no number is given
+// checks if number is valid, if not number return last element in the array
+if (typeof number !== "number"){
+  return array[array.length - 1]
+} 
+// if number is not positive return an empty list
+// if number is not valid or negative return the whole array
+if (number < 0){
+  return [];
+}
+// return the whole array if number is greater than the arrays length
+if(number > array.length){
+  return array
+}
+// accept an argument representing the number of items to include in the output
+// if first starting index is missing slice from the end index and go backwards
+return array.slice(-number)
 
 }
 
@@ -414,7 +436,7 @@ _.every = function (collection, func){
           for (let i = 0; i < collection.length; i++){
             // determine uf the result of invoking func returns a falsy piece of data
            if (func(/current item/, /current index/, /collection/)){
-                 return false
+                 return false;
            }
           }
       }
