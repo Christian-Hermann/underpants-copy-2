@@ -249,11 +249,17 @@ _.indexOf = function(array, value){
 */
 
 /*
-I:
-O:
-C:
-E:
+I: takes in an array and value
+O: return true if array contains value
+   retrun false otherwise
+C: must use ternary operator
+E: did you use === ?
+   what if no value is given
 */
+
+_.contains = function (array, value){
+  
+}
 
 
 /** _.each
