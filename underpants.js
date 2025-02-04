@@ -94,21 +94,24 @@ E: What if number is negative
 
 
 _.first = function(array, number){
-
+ // return an empty array if the array param is not an array
   if (!Array.isArray(array)){
     return []
   }
-  if (number !== "number"){
+  // return the first element if if no number is given
+  if (typeof number !== "number"){
     return array[0]
   } 
+  // if number is not positive return an empty list
   if (number < 0){
     return [];
   }
+  // return the whole array if number is greater than the arrays length
   if(number > array.length){
     return array
   } 
- 
-    return array
+  // accept an argument representing the number of items to include in the output
+    return array.slice(0, number)
   }
   
 
