@@ -54,12 +54,15 @@ E:
 */
 
 _.typeOf = function(value){
+  // make sure value is an array and not an object
   if(Array.isArray(value)){
     return "array"
   }
+  // make sure value is null and not an object
   if(value === null){
     return "null"
   }
+  // typeof will cover the rest of the types of strings
   return typeof value
 }
 
@@ -95,14 +98,17 @@ E: What if number is negative
 
 _.first = function(array, number){
  // return an empty array if the array param is not an array
+ // if number is an array just return an empty array
   if (!Array.isArray(array)){
     return []
   }
   // return the first element if if no number is given
+  // checks if number is valid, if not number return firs telement of array
   if (typeof number !== "number"){
     return array[0]
   } 
   // if number is not positive return an empty list
+  // if number is not valid or negative return the whole array
   if (number < 0){
     return [];
   }
@@ -111,6 +117,7 @@ _.first = function(array, number){
     return array
   } 
   // accept an argument representing the number of items to include in the output
+  // if all conditions pass then slice array to return first number elements
     return array.slice(0, number)
   }
   
@@ -136,11 +143,18 @@ _.first = function(array, number){
 */
 
 /*
-I:
-O:
+I: takes in an array and a number
+O: if array is not an array return []
+   if number is not given or not a number return just the last number in the array
+   otherwise, return the last number items of array
 C:
-E:
+E: What if number is negative 
+   what if number is greater than array length
 */
+
+_.last = function(array, number){
+
+}
 
 
 /** _.indexOf
@@ -385,6 +399,33 @@ O:
 C:
 E:
 */
+
+/*
+_.every = function (collection, func){
+   if(Array.isArray(collection)){
+      // determine if no func was provided
+      if(func === undefined){
+         for (let i = 0; i < collection.length; i++){
+          if(!collection[i]){
+              return false;
+          }
+         }
+      } else { // else there was a func
+          for (let i = 0; i < collection.length; i++){
+            // determine uf the result of invoking func returns a falsy piece of data
+           if (func(/current item/, /current index/, /collection/)){
+                 return false
+           }
+          }
+      }
+   } else { // its an object
+
+   }
+   return true;
+}
+
+*/
+
 
 
 /** _.some
