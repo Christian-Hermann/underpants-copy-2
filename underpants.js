@@ -95,7 +95,6 @@ E: What if number is negative
 
 _.first = function(array, number){
 
-
   if (!Array.isArray(array)){
     return []
   }
@@ -108,12 +107,8 @@ _.first = function(array, number){
   if(number > array.length){
     return array
   } 
-  for(var i = 0; i < array.length; i++){
-    if(typeof array[i] === "number"){
-      return array[i]
-    }
-    }
-    return array[0]
+ 
+    return array
   }
   
 
