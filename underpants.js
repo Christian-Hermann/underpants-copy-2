@@ -367,6 +367,7 @@ _.filter = function (array, func){
       // if element is true push to the output array
       output.push(array[i])
     }
+    
   }
   return output
 }
@@ -385,11 +386,23 @@ _.filter = function (array, func){
 */
 
 /*
-I:
-O:
+I: takes in an array and a function
+O: call function for each element in array passing the arguments: element, index, array
+   return a new array of elements 
 C:
 E:
 */
+
+_.reject = function (array, func){
+  const output = [];
+
+  for(let i = 0; i < array.length; i++){
+    if(func(array[i], i, array) === false){
+      output.push(array[i])
+    }
+  }
+  return output
+}
 
 
 /** _.partition
