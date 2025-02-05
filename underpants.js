@@ -258,7 +258,9 @@ E: did you use === ?
 */
 
 _.contains = function (array, value){
-  
+// use ternary operator to see if value is included in the array
+// condition ? expression true : expression false
+ return array.includes(value) ? true : false
 }
 
 
@@ -279,7 +281,7 @@ _.contains = function (array, value){
 */
 
 /*
-I:
+I: takes in a collection and a function 
 O:
 C:
 E:
