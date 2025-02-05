@@ -225,14 +225,6 @@ _.indexOf = function(array, value){
 
 
 
-
-
-
-
-
-
-
-
 /** _.contains
 * Arguments:
 *   1) An array
@@ -320,11 +312,25 @@ _.each = function (collection, func){
 */
 
 /*
-I:
-O:
-C:
-E:
+I: return a new array 
+O: return a new array of all the elements from array with duplicates removed
+C: use indexof()
+E: should have no side effects
 */
+
+_.unique = function(array, func){
+  // initailize empty aray to hold the new array
+  let newArr = [];
+  // use a for loop to iterate throught the array
+  for(let i = 0; i < array.length; i++){
+  // check to see if newArr is a part of element if it is not found it returns a -1
+     if(newArr.indexOf(array[i]) === -1){
+  // if the element is not found it is pushed to the new array
+      newArr.push(array[i])
+     }
+  }
+   return newArr
+}
 
 
 /** _.filter
@@ -344,12 +350,26 @@ E:
 */
 
 /*
-I:
-O:
+I: takes in an array and a function
+O: call function for each element in array passing the arguments: element, index, array
+   return a new array of elements for which calling function returned true
 C:
-E:
+E: What if function returns something other than true or false 
 */
 
+_.filter = function (array, func){
+// initialize an output array to hold new values
+  const output = []
+    // use a for loop to iterate through the array
+  for (let i = 0; i < array.length; i++){
+     // call function for each element in the array to equal true
+    if (func(array[i], i, array) === true){
+      // if element is true push to the output array
+      output.push(array[i])
+    }
+  }
+  return output
+}
 
 /** _.reject
 * Arguments:
