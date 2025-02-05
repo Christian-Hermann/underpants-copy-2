@@ -282,10 +282,31 @@ _.contains = function (array, value){
 
 /*
 I: takes in a collection and a function 
-O:
-C:
-E:
+O: check to see if collection is an array then call function with arguments
+   check to see if collection is an object then call function with arguments
+C: should not have side effects
+E: NA
 */
+
+_.each = function (collection, func){
+  // check to see if the collection is an array
+  if (Array.isArray(collection)){
+    // iterate through the collection
+    for(var i = 0; i < collection.length; i++){
+      // call function on element, index, and collection
+      func(collection[i], i, collection)
+    }
+    // check to see if collection is an object, make sure it is not null, we
+    // already know that its not an array
+  } else if ( typeof collection === 'object' && collection !== 'null'){
+    // loop through the keys in collection we know its an object
+    for(var key in collection){
+      // call function for each property, propertys value, key, collection
+      func(collection[key], key, collection)
+    }
+  }
+
+}
 
 
 /** _.unique
