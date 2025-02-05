@@ -393,11 +393,15 @@ C:
 E:
 */
 
+// the same thing is filter except function call equals false
 _.reject = function (array, func){
+  // initalie an empty array to hold new values
   const output = [];
-
+ // use a for loop to iterate through the array
   for(let i = 0; i < array.length; i++){
+    // check if function call paasing the arguments is false
     if(func(array[i], i, array) === false){
+      // if false then push to output array
       output.push(array[i])
     }
   }
@@ -425,11 +429,23 @@ _.reject = function (array, func){
 */
 
 /*
-I:
-O:
+I: takes in an array and a function
+O: return an array of two sub arrays
+   an array that contains all the values the function returned truthy
+   an array that contains all the values the function returned falsey
 C:
-E:
+E: This is going to return an array of arrays
 */
+
+_.partition = function (array, func){
+
+  const output = [[],[]];
+
+  for(let i = 0; i < array.length; i++){
+
+  }
+
+}
 
 
 /** _.map
