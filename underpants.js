@@ -598,11 +598,13 @@ _.every = function (collection, func){
 */
 
 /*
-I:
-O:
+I: takes in a collection and a function
+O: 
 C:
 E:
 */
+
+_.some = function(collection, func)
 
 
 /** _.reduce
@@ -648,11 +650,17 @@ E:
 */
 
 /*
-I:
-O:
+I: takes in two objects maybe more
+O: copy properties from object 2 to object 1
+   if more objects are passed in, copy their properties to obj1 in the order they are passed in
+   return the updated obj1
 C:
 E:
 */
+
+_.extend = function(obj1, obj2){
+
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
