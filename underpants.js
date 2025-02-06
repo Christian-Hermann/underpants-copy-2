@@ -613,10 +613,48 @@ _.every = function (collection, func){
 
 /*
 I: takes in a collection and a function
-O: 
+O: Should return true if at least one iteration is true
+   Should return false when no iterations are true
 C:
-E:
+E: what if function doesn't return a boolean
+   what if function is not given
 */
+
+
+// very simlilar to _.every with a few changes to make things truthy 
+_.some = function (collection, func){
+  if(Array.isArray(collection)){
+     // determine if no func was provided
+     if(func === undefined){
+        for (let i = 0; i < collection.length; i++){
+          // return true when ALL iterations are true
+          // return truthy results when no function passed in
+          // return falsy results when no function is passed in
+         if(collection[i]){
+             return true;
+         }
+        }
+     } else { // else there was a func
+         for (let i = 0; i < collection.length; i++){
+           // determine if the result of invoking func returns a truthy piece of data
+          if (func(collection[i], i, collection) === true){
+                return true;
+          }
+         }
+     }
+  } else { // this is an object 
+   // iterate throught the object
+      for(var key in collection){
+          // determine if result of invoking func returns truthy
+       if (func(collection[key], key, collection) === true){
+         return true;
+       }
+      }
+
+  } // returns false when not all iterations are true
+  return false;
+}
+
 
 
 /** _.reduce
