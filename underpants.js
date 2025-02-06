@@ -481,11 +481,14 @@ _.map = function(collection, func){
    //determine if collection is an array
    if(Array.isArray(collection)){
      for(let i = 0; i < collection.length; i++){
-        const result = func(collection[i], i, collection) // what is the purpose of the callback
-        output.push(result);
+        output.push(func(collection[i], i, collection)) // what is the purpose of the callback
+        
      }
    } else {
-
+      for(let key in collection){
+        output.push(func(collection[key], key, collection))
+      }
+      return output
    }
 
  // return output array
@@ -512,8 +515,8 @@ E: should not have side effects
 */
 
 _.pluck = function (array, property){
-  // use map to iterate through the array of objects
-  return array.map(function(element){
+  // use _.map to iterate through the array of objects
+  return _.map (array, function(element){
     // return the element form the array with property value 
     return element[property];});
 }
@@ -542,13 +545,17 @@ _.pluck = function (array, property){
 */
 
 /*
-I:
-O:
-C:
-E:
+I: takes in a collection and a function
+O: call func for every element in array and object
+   if return value is true return true if any one of them false return false
+   if funtion is not provided, return true, otherwise return false
+C: no side effects
+E: what if function doesnt return a boolean
+   what if function is not given
+   
 */
 
-/*
+
 _.every = function (collection, func){
    if(Array.isArray(collection)){
       // determine if no func was provided
@@ -560,19 +567,26 @@ _.every = function (collection, func){
          }
       } else { // else there was a func
           for (let i = 0; i < collection.length; i++){
-            // determine uf the result of invoking func returns a falsy piece of data
-           if (func(/current item/, /current index/, /collection/)){
+            // determine if the result of invoking func returns a falsy piece of data
+           if (func(collection[i], i, collection) === false){
                  return false;
            }
           }
       }
-   } else { // its an object
+   } else { // this is an object 
+    // iterate throught the object
+       for(var key in collection){
+           // determine if result of invoking func returns falsey
+        if (func(collection[key], key, collection) === false){
+          return false;
+        }
+       }
 
-   }
+   } // all must be false to return true
    return true;
 }
 
-*/
+
 
 
 
@@ -603,8 +617,6 @@ O:
 C:
 E:
 */
-
-_.some = function(collection, func)
 
 
 /** _.reduce
