@@ -439,12 +439,20 @@ E: This is going to return an array of arrays
 
 _.partition = function (array, func){
 
-  const output = [[],[]];
-
-  for(let i = 0; i < array.length; i++){
-
+  // initalize two variables to hold a true and false array
+  const elementTrue = []
+  const elementFalse = []
+  
+  for(var i = 0; i < array.length; i++){
+    if (func(array[i], i, array) === true){
+      elementTrue.push(array[i])
+    }
+    else if (func(array[i], i, array) === false){
+      elementFalse.push(array[i])
+    }
   }
 
+ return [elementTrue, elementFalse]
 }
 
 
