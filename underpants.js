@@ -621,8 +621,9 @@ E: what if function doesn't return a boolean
 */
 
 
-// very simlilar to _.every with a few changes to make things truthy 
+
 _.some = function (collection, func){
+  // spec.js tests very simlilar to _.every with a few changes to make things truthy 
   if(Array.isArray(collection)){
      // determine if no func was provided
      if(func === undefined){
@@ -684,7 +685,7 @@ C:
 E:
 */
 
-/** _.extend
+/** _.extend. // Is basically Object.assign() can I use Object.assign()
 * Arguments:
 *   1) An Object
 *   2) An Object
@@ -708,7 +709,7 @@ C:
 E:
 */
 
-_.extend = function(obj1, obj2){
+_.extend = function(target, ...objects){ 
 
 }
 
