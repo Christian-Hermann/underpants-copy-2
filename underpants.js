@@ -505,11 +505,19 @@ _.map = function(collection, func){
 */
 
 /*
-I:
-O:
-C:
-E:
+I: an array of objects and a property
+O: return an array containing the value of peoperty for every element in array
+C: must use _.map 
+E: should not have side effects
 */
+
+_.pluck = function (array, property){
+  // use map to iterate through the array of objects
+  return array.map(function(element){
+    // return the element form the array with property value 
+    return element[property];});
+}
+
 
 
 /** _.every
