@@ -442,16 +442,18 @@ _.partition = function (array, func){
   // initalize two variables to hold a true and false array
   const elementTrue = []
   const elementFalse = []
-  
+  // iterate through array
   for(var i = 0; i < array.length; i++){
+    // function call on elements to see if they are truthy
     if (func(array[i], i, array) === true){
       elementTrue.push(array[i])
     }
+    // function call to see if they are falsey
     else if (func(array[i], i, array) === false){
       elementFalse.push(array[i])
     }
   }
-
+      /// return true and false together in array
  return [elementTrue, elementFalse]
 }
 
