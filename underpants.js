@@ -679,29 +679,40 @@ _.some = function (collection, func){
 
 
 /*
-I:
-O:
-C:
-E:
+I: an array, a function, and sees
+O: call function for every element in collection passing result, element, index
+   use the return value of function as the previous result
+   on the very first iteration, use seed as the previous result
+   if no seed was given, use the first element/value of collections as seed and continue to next element 
+   after the least iteration, return the value of the function call
+C: 
+E: should work without a seed
+   should not have side effects
+   should work with any array and a seed
 */
 
 _.reduce = function(array, func, seed){
 let output;
+// determine if seed value was not provided
 if (seed === undefined){
+  // if seed is undefined acc is set to first element in array
   output = array[0];
   for(let i = 1; i < array.length; i++){
+    // reassign output to the result of invoking the callback function
     output = func(output, array[i], i);
   }
  } else {
   output = seed;
+  // use seed for the initial acc
   for(let i = 0; i < array.length; i++){
     output = func(output, array[i], i)
   }
  }
+ // return final accumulated value
  return output;
 }
-
-/** _.extend. // Is basically Object.assign() can I use Object.assign()
+// Is basically Object.assign() can I use Object.assign()
+/** _.extend. 
 * Arguments:
 *   1) An Object
 *   2) An Object
@@ -722,10 +733,16 @@ O: copy properties from object 2 to object 1
    if more objects are passed in, copy their properties to obj1 in the order they are passed in
    return the updated obj1
 C:
-E:
+E: should extend an object
+   should overwrite existing properties
+   should handle any number of arguments
 */
 
 _.extend = function(target, ...objects){ 
+
+  // using Object.assign to copy all inumerable properties from the source object
+  // to the target object
+  return Object.assign(target, ...objects);
 
 }
 
