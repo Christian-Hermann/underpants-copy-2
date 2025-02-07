@@ -685,6 +685,22 @@ C:
 E:
 */
 
+_.reduce = function(array, func, seed){
+let output;
+if (seed === undefined){
+  output = array[0];
+  for(let i = 1; i < array.length; i++){
+    output = func(output, array[i], i);
+  }
+ } else {
+  output = seed;
+  for(let i = 0; i < array.length; i++){
+    output = func(output, array[i], i)
+  }
+ }
+ return output;
+}
+
 /** _.extend. // Is basically Object.assign() can I use Object.assign()
 * Arguments:
 *   1) An Object
